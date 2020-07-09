@@ -1,21 +1,18 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: nodeapp
+  name: springboot 
 spec:
   replicas: 3
-  selector:
-    matchExpressions:
-      - {key: app, operator: In, values: [nodeapp]}
-  template:
+template:
     metadata:
-      name: nodeapp
+      name: springboot
       labels:
-        app: nodeapp
+        app: springboot
     spec:
       containers:
-      - name: nodeapp
-        image: kammana/nodeapp:v1
+      - name: springboot 
+        image: ganeshaws/springboot:v1
         ports:
         - containerPort: 8080
 
